@@ -1,0 +1,30 @@
+{
+  "printWidth": 50,
+  "tabWidth": 2,
+  "useTabs": false,
+  "semi": true,
+  "singleQuote": true,
+  "quoteProps": "as-needed",
+  "trailingComma": "es5",
+  "bracketSpacing": true,
+  "bracketSameLine": false,
+  "arrowParens": "avoid",
+  "overrides": [
+    {
+      "files": ["*.md", "*.mdx"],
+      "options": {
+        "embeddedLanguageFormatting": "auto",
+        "printWidth": 50,
+        "tabWidth": 2,
+        "useTabs": false,
+        "semi": true,
+        "singleQuote": true,
+        "quoteProps": "as-needed",
+        "trailingComma": "es5",
+        "bracketSpacing": true,
+        "bracketSameLine": false,
+        "arrowParens": "avoid"
+      }
+    }
+  ]
+}

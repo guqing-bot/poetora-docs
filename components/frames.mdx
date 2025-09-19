@@ -1,0 +1,532 @@
+---
+title: 'Frames'
+description: '图片框组件用于为图片、视频或其他视觉内容提供一致的样式容器和可选标题。图片框能够居中内容并与周围文本提供视觉分离，提升文档的专业度'
+icon: 'frame'
+---
+
+# 图片框
+
+图片框组件用于包装图片、视频或其他视觉内容，提供一致的样式和可选的标题说明。它能让你的视觉内容更加专业和统一。
+
+## 基础用法
+
+### 简单图片框
+
+为图片添加图片框样式：
+
+<Frame>
+  <img
+    src="https://images.unsplash.com/photo-1551434678-e076c223a692?w=800&h=400&fit=crop"
+    alt="团队协作办公场景"
+  />
+</Frame>
+
+```mdx
+<Frame>
+  <img
+    src="/images/team-collaboration.jpg"
+    alt="团队协作办公场景"
+  />
+</Frame>
+```
+
+### 带标题的图片框
+
+添加描述性标题来提供更多上下文：
+
+<Frame caption="Poetora 编辑器界面 - 现代化的文档编辑体验">
+  <img
+    src="https://images.unsplash.com/photo-1551434678-e076c223a692?w=800&h=400&fit=crop"
+    alt="Poetora 编辑器界面截图"
+  />
+</Frame>
+
+```mdx
+<Frame caption="Poetora 编辑器界面 - 现代化的文档编辑体验">
+  <img
+    src="/images/editor-interface.png"
+    alt="Poetora 编辑器界面截图"
+  />
+</Frame>
+```
+
+## 实际应用场景
+
+### 产品功能展示
+
+展示产品界面和功能特性：
+
+<Frame caption="实时协作功能 - 多人同时编辑，实时看到其他用户的光标和修改">
+  <img
+    src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?w=800&h=450&fit=crop"
+    alt="多人协作编辑界面"
+  />
+</Frame>
+
+**功能特点：**
+
+- 实时同步编辑内容
+- 显示其他用户的光标位置
+- 智能冲突解决机制
+- 完整的变更历史记录
+
+<Frame caption="AI 写作助手 - 智能内容生成和优化建议">
+  <img
+    src="https://images.unsplash.com/photo-1677442136019-21780ecad995?w=800&h=450&fit=crop"
+    alt="AI 写作助手界面"
+  />
+</Frame>
+
+**AI 功能包括：**
+
+- 内容生成和扩写
+- 语法检查和优化
+- 多语言翻译支持
+- 智能摘要生成
+
+### 操作步骤截图
+
+配合步骤指南展示具体操作：
+
+**第一步：创建新文档**
+
+<Frame caption="点击工作台左上角的'新建文档'按钮开始创建">
+  <img
+    src="https://images.unsplash.com/photo-1586281380349-632531db7ed4?w=800&h=400&fit=crop"
+    alt="创建新文档界面"
+  />
+</Frame>
+
+**第二步：选择模板**
+
+<Frame caption="从丰富的模板库中选择适合的文档模板">
+  <img
+    src="https://images.unsplash.com/photo-1586281380349-632531db7ed4?w=800&h=400&fit=crop"
+    alt="模板选择界面"
+  />
+</Frame>
+
+### 架构图和流程图
+
+展示技术架构和业务流程：
+
+<Frame caption="Poetora 技术架构图 - 基于云原生的微服务架构">
+  <img
+    src="https://images.unsplash.com/photo-1558494949-ef010cbdcc31?w=800&h=500&fit=crop"
+    alt="技术架构图"
+  />
+</Frame>
+
+**架构特点：**
+
+- 微服务架构设计
+- 容器化部署
+- 自动扩缩容
+- 高可用性保障
+
+<Frame caption="文档编辑流程 - 从创建到发布的完整流程">
+  <img
+    src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=800&h=400&fit=crop"
+    alt="文档编辑流程图"
+  />
+</Frame>
+
+### 数据可视化
+
+展示图表和数据分析结果：
+
+<Frame caption="用户增长趋势 - 过去12个月的用户数量变化">
+  <img
+    src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=800&h=400&fit=crop"
+    alt="用户增长图表"
+  />
+</Frame>
+
+**关键指标：**
+
+- 月活跃用户：50,000+
+- 文档创建数：200,000+
+- 团队协作数：5,000+
+- 用户满意度：4.8/5
+
+<Frame caption="功能使用热力图 - 最受欢迎的功能模块分布">
+  <img
+    src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=800&h=400&fit=crop"
+    alt="功能使用热力图"
+  />
+</Frame>
+
+## 多媒体内容支持
+
+### 视频内容
+
+图片框组件也支持视频和其他媒体内容：
+
+<Frame caption="Poetora 产品演示视频 - 了解核心功能和使用方法">
+  <div
+    style={{
+      position: 'relative',
+      paddingBottom: '56.25%',
+      height: 0,
+      overflow: 'hidden',
+    }}
+  >
+    <iframe
+      style={{
+        position: 'absolute',
+        top: 0,
+        left: 0,
+        width: '100%',
+        height: '100%',
+      }}
+      src="https://www.youtube-nocookie.com/embed/dQw4w9WgXcQ"
+      title="Poetora 产品演示"
+      frameBorder="0"
+      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+      allowFullScreen
+    />
+  </div>
+</Frame>
+
+```mdx
+<Frame caption="Poetora 产品演示视频 - 了解核心功能和使用方法">
+  <div
+    style={{
+      position: 'relative',
+      paddingBottom: '56.25%',
+      height: 0,
+      overflow: 'hidden',
+    }}
+  >
+    <iframe
+      style={{
+        position: 'absolute',
+        top: 0,
+        left: 0,
+        width: '100%',
+        height: '100%',
+      }}
+      src="https://www.youtube.com/embed/video-id"
+      title="视频标题"
+      frameBorder="0"
+      allowFullScreen
+    />
+  </div>
+</Frame>
+```
+
+### 交互式内容
+
+嵌入交互式演示或代码预览：
+
+<Frame caption="在线代码编辑器 - 实时预览 Poetora SDK 的使用效果">
+  <div
+    style={{
+      height: '400px',
+      border: '1px solid #e0e0e0',
+      borderRadius: '8px',
+      backgroundColor: '#f8f9fa',
+      display: 'flex',
+      alignItems: 'center',
+      justifyContent: 'center',
+    }}
+  >
+    <div style={{ textAlign: 'center' }}>
+      <h3>🔧 交互式代码演示</h3>
+      <p>
+        这里可以嵌入 CodePen、JSFiddle
+        或其他在线编辑器
+      </p>
+      <p>用户可以直接在文档中编辑和运行代码</p>
+    </div>
+  </div>
+</Frame>
+
+## 组合使用
+
+### 图片网格展示
+
+结合列布局创建图片画廊：
+
+<Columns cols={2}>
+  <Frame caption="移动端界面 - 响应式设计确保在手机上的完美体验">
+    <img
+      src="https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?w=400&h=600&fit=crop"
+      alt="移动端界面"
+    />
+  </Frame>
+  <Frame caption="桌面端界面 - 功能完整的专业编辑环境">
+    <img
+      src="https://images.unsplash.com/photo-1551434678-e076c223a692?w=800&h=600&fit=crop"
+      alt="桌面端界面"
+    />
+  </Frame>
+</Columns>
+
+### 对比展示
+
+展示前后对比或不同方案：
+
+<Columns cols={2}>
+  <div>
+    **传统文档编辑器**
+    <Frame caption="传统编辑器 - 功能有限，界面复杂">
+      <img
+        src="https://images.unsplash.com/photo-1586281380349-632531db7ed4?w=600&h=400&fit=crop"
+        alt="传统编辑器界面"
+      />
+    </Frame>
+    **问题：** - 学习成本高 - 协作困难 - 发布复杂
+  </div>
+  <div>
+    **Poetora 编辑器**
+    <Frame caption="Poetora - 现代化的云端编辑体验">
+      <img
+        src="https://images.unsplash.com/photo-1551434678-e076c223a692?w=600&h=400&fit=crop"
+        alt="Poetora 编辑器界面"
+      />
+    </Frame>
+    **优势：** - 直观易用 - 实时协作 - 一键发布
+  </div>
+</Columns>
+
+### 流程说明
+
+配合步骤说明创建完整的操作指南：
+
+<Steps>
+  <Step title="准备内容" icon="file-text">
+    首先准备好要展示的图片或视觉内容。
+
+    <Frame caption="选择高质量的图片素材，确保清晰度和相关性">
+      <img src="https://images.unsplash.com/photo-1551434678-e076c223a692?w=600&h=300&fit=crop" alt="内容准备" />
+    </Frame>
+
+  </Step>
+  <Step title="添加图片框" icon="square">
+    使用 Frame 组件包装你的内容。
+
+    <Frame caption="为内容添加专业的图片框样式">
+      <img src="https://images.unsplash.com/photo-1586281380349-632531db7ed4?w=600&h=300&fit=crop" alt="添加图片框" />
+    </Frame>
+
+  </Step>
+  <Step title="优化展示" icon="eye">
+    添加合适的标题和说明文字。
+
+    <Frame caption="完善的标题说明让内容更加清晰易懂">
+      <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=600&h=300&fit=crop" alt="优化展示" />
+    </Frame>
+
+  </Step>
+</Steps>
+
+## 组件属性
+
+| 属性名    | 类型      | 必需 | 默认值 | 描述                 |
+| --------- | --------- | ---- | ------ | -------------------- |
+| `caption` | `string`  | ❌   | -      | 图片或内容的标题说明 |
+| `border`  | `boolean` | ❌   | `true` | 是否显示边框         |
+| `shadow`  | `boolean` | ❌   | `true` | 是否显示阴影效果     |
+| `rounded` | `boolean` | ❌   | `true` | 是否使用圆角样式     |
+
+## 样式定制
+
+### 不同样式变体
+
+可以通过属性控制图片框的外观：
+
+<Columns cols={2}>
+  <div>
+    **默认样式**
+    <Frame caption="带边框和阴影的默认样式">
+      <img
+        src="https://images.unsplash.com/photo-1551434678-e076c223a692?w=400&h=250&fit=crop"
+        alt="默认样式示例"
+      />
+    </Frame>
+  </div>
+  <div>
+    **简洁样式**
+    <Frame
+      caption="无边框的简洁样式"
+      border={false}
+      shadow={false}
+    >
+      <img
+        src="https://images.unsplash.com/photo-1551434678-e076c223a692?w=400&h=250&fit=crop"
+        alt="简洁样式示例"
+      />
+    </Frame>
+  </div>
+</Columns>
+
+```mdx
+<!-- 默认样式 -->
+
+<Frame caption="带边框和阴影的默认样式">
+  <img src="/image.jpg" alt="图片描述" />
+</Frame>
+
+<!-- 简洁样式 -->
+
+<Frame
+  caption="无边框的简洁样式"
+  border={false}
+  shadow={false}
+>
+  <img src="/image.jpg" alt="图片描述" />
+</Frame>
+```
+
+### 自定义尺寸
+
+控制图片框内容的尺寸：
+
+<Frame caption="固定尺寸的图片展示 - 适合统一的视觉效果">
+  <div
+    style={{
+      width: '100%',
+      height: '200px',
+      overflow: 'hidden',
+      display: 'flex',
+      alignItems: 'center',
+      justifyContent: 'center',
+    }}
+  >
+    <img
+      src="https://images.unsplash.com/photo-1551434678-e076c223a692?w=800&h=200&fit=crop"
+      alt="固定尺寸示例"
+      style={{
+        width: '100%',
+        height: '100%',
+        objectFit: 'cover',
+      }}
+    />
+  </div>
+</Frame>
+
+## 最佳实践
+
+### 图片选择
+
+- **高质量图片** - 使用清晰、高分辨率的图片
+- **相关性强** - 确保图片与内容主题相关
+- **版权清晰** - 使用有授权的图片素材
+- **文件优化** - 压缩图片大小以提升加载速度
+
+### 标题编写
+
+- **描述准确** - 准确描述图片内容和用途
+- **简洁明了** - 避免过长的标题文字
+- **信息丰富** - 提供必要的上下文信息
+- **一致风格** - 保持标题的格式和语调一致
+
+### 布局考虑
+
+- **空间平衡** - 合理安排图片和文字的比例
+- **视觉流程** - 考虑用户的阅读顺序
+- **响应式设计** - 确保在不同设备上的良好显示
+- **加载性能** - 优化图片加载策略
+
+### 可访问性
+
+- **替代文本** - 为所有图片提供有意义的 alt 文本
+- **对比度** - 确保标题文字的对比度足够
+- **键盘访问** - 支持键盘用户的导航
+- **屏幕阅读器** - 提供清晰的内容结构
+
+## 技术细节
+
+### 图片优化
+
+```html
+<!-- 响应式图片 -->
+<frame caption="响应式图片示例">
+  <img
+    src="/image-800.jpg"
+    srcset="
+      /image-400.jpg   400w,
+      /image-800.jpg   800w,
+      /image-1200.jpg 1200w
+    "
+    sizes="(max-width: 768px) 400px, (max-width: 1024px) 800px, 1200px"
+    alt="响应式图片"
+  />
+</frame>
+```
+
+### 懒加载
+
+```html
+<!-- 懒加载图片 -->
+<frame caption="懒加载图片示例">
+  <img
+    src="/placeholder.jpg"
+    data-src="/actual-image.jpg"
+    loading="lazy"
+    alt="懒加载图片"
+  />
+</frame>
+```
+
+### 现代图片格式
+
+```html
+<!-- 使用 WebP 格式 -->
+<frame caption="现代图片格式">
+  <picture>
+    <source
+      srcset="/image.webp"
+      type="image/webp"
+    />
+    <source
+      srcset="/image.jpg"
+      type="image/jpeg"
+    />
+    <img
+      src="/image.jpg"
+      alt="现代图片格式示例"
+    />
+  </picture>
+</frame>
+```
+
+## 常见用例
+
+### 教程截图
+
+为教程和指南添加清晰的截图说明：
+
+<Frame caption="步骤1：在工作台点击'新建文档'按钮">
+  <img
+    src="https://images.unsplash.com/photo-1586281380349-632531db7ed4?w=700&h=400&fit=crop"
+    alt="新建文档步骤截图"
+  />
+</Frame>
+
+### 产品展示
+
+展示产品功能和界面设计：
+
+<Frame caption="Poetora 移动端 App - 随时随地编辑你的文档">
+  <img
+    src="https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?w=300&h=600&fit=crop"
+    alt="移动端 App 界面"
+  />
+</Frame>
+
+### 团队介绍
+
+展示团队成员和办公环境：
+
+<Frame caption="Poetora 团队 - 来自全球的优秀人才">
+  <img
+    src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?w=700&h=400&fit=crop"
+    alt="团队合影"
+  />
+</Frame>
+
+---
+
+图片框组件是展示视觉内容的专业工具。合理使用可以让你的文档更具视觉吸引力和专业度。接下来可以学习[代码组组件](/components/advanced/code-groups)来更好地展示代码示例。

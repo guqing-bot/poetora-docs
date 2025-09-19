@@ -1,0 +1,746 @@
+---
+title: 'Tabs'
+description: '标签页组件用于在单个容器中组织多个内容面板，用户可以通过点击标签在不同内容之间切换。这是展示相关但独立信息的理想选择'
+icon: 'panel-top'
+---
+
+# 标签页
+
+标签页组件用于在单个容器中组织多个内容面板，用户可以通过点击标签在不同内容之间切换。这是展示相关但独立信息的理想选择。
+
+## 基础用法
+
+### 简单标签页
+
+创建基本的标签页结构：
+
+<Tabs>
+  <Tab title="介绍">
+    👋 欢迎使用 Poetora 文档平台！
+
+    Poetora 是一个现代化的云端文档编辑器，专为开发者和内容创作者设计。无需安装任何软件，在浏览器中即可享受完整的编辑体验。
+
+    主要特色：
+    - 🤖 AI 写作助手
+    - 👥 实时协作编辑
+    - 🎨 丰富的组件库
+    - ☁️ 云端自动保存
+
+  </Tab>
+  <Tab title="快速开始">
+    🚀 只需 3 步即可开始使用：
+
+    1. **注册账号** - 访问官网完成注册
+    2. **创建工作空间** - 设置你的第一个项目
+    3. **开始编辑** - 选择模板或空白文档
+
+    新用户可以免费试用 14 天的专业版功能！
+
+  </Tab>
+  <Tab title="联系我们">
+    📞 需要帮助？我们提供多种联系方式：
+
+    - **在线客服** - 工作日 9:00-18:00
+    - **邮箱支持** - support@poetora.com
+    - **社区论坛** - 与其他用户交流经验
+    - **帮助文档** - 查看详细使用指南
+
+  </Tab>
+</Tabs>
+
+```mdx
+<Tabs>
+  <Tab title="介绍">
+    👋 欢迎使用 Poetora 文档平台！ Poetora
+    是一个现代化的云端文档编辑器...
+  </Tab>
+  <Tab title="快速开始">
+    🚀 只需 3 步即可开始使用...
+  </Tab>
+  <Tab title="联系我们">
+    📞 需要帮助？我们提供多种联系方式...
+  </Tab>
+</Tabs>
+```
+
+### 带图标的标签页
+
+为标签页添加图标增强视觉识别：
+
+<Tabs>
+  <Tab title="文档编辑" icon="file-pen-line">
+    ✍️ **强大的编辑功能**
+
+    Poetora 提供专业级的富文本编辑体验：
+
+    - **所见即所得** - 实时预览编辑效果
+    - **快捷键支持** - 提升编辑效率
+    - **格式丰富** - 支持多种文本格式
+    - **组件插入** - 轻松添加各种组件
+
+    ```javascript
+    // 示例：插入代码块
+    function createDocument() {
+      return new Document({
+        title: '我的新文档',
+        content: '开始编写内容...'
+      });
+    }
+    ```
+
+  </Tab>
+  <Tab title="团队协作" icon="users">
+    👥 **实时协作功能**
+
+    与团队成员无缝协作编辑：
+
+    - **多人同时编辑** - 实时看到其他人的修改
+    - **评论系统** - 在任意位置添加评论和建议
+    - **权限管理** - 精确控制成员访问权限
+    - **变更通知** - 及时了解文档更新动态
+
+    | 权限级别 | 查看 | 编辑 | 评论 | 管理 |
+    |----------|------|------|------|------|
+    | 查看者   | ✅   | ❌   | ✅   | ❌   |
+    | 编辑者   | ✅   | ✅   | ✅   | ❌   |
+    | 管理员   | ✅   | ✅   | ✅   | ✅   |
+
+  </Tab>
+  <Tab title="发布分享" icon="share">
+    📤 **灵活的发布选项**
+
+    多种方式发布和分享你的文档：
+
+    - **公开发布** - 生成公开访问链接
+    - **密码保护** - 为敏感内容设置访问密码
+    - **自定义域名** - 使用自己的域名发布
+    - **导出功能** - 导出为 PDF、HTML 等格式
+
+    <Info>
+    专业版用户可以使用自定义域名和高级发布设置。
+    </Info>
+
+  </Tab>
+</Tabs>
+
+```mdx
+<Tabs>
+  <Tab title="文档编辑" icon="edit">
+    ✍️ **强大的编辑功能** Poetora
+    提供专业级的富文本编辑体验...
+  </Tab>
+  <Tab title="团队协作" icon="users">
+    👥 **实时协作功能** 与团队成员无缝协作编辑...
+  </Tab>
+  <Tab title="发布分享" icon="share">
+    📤 **灵活的发布选项**
+    多种方式发布和分享你的文档...
+  </Tab>
+</Tabs>
+```
+
+## 实际应用场景
+
+### 代码示例展示
+
+展示不同编程语言的代码实现：
+
+<Tabs>
+  <Tab title="JavaScript" icon="code">
+    ```javascript
+    // Poetora API 客户端 - JavaScript 版本
+    class PoetoraClient {
+      constructor(apiKey) {
+        this.apiKey = apiKey;
+        this.baseURL = 'https://api.poetora.com/v1';
+      }
+
+      async createDocument(data) {
+        const response = await fetch(`${this.baseURL}/documents`, {
+          method: 'POST',
+          headers: {
+            'Authorization': `Bearer ${this.apiKey}`,
+            'Content-Type': 'application/json'
+          },
+          body: JSON.stringify(data)
+        });
+
+        return await response.json();
+      }
+
+      async getDocument(id) {
+        const response = await fetch(`${this.baseURL}/documents/${id}`, {
+          headers: {
+            'Authorization': `Bearer ${this.apiKey}`
+          }
+        });
+
+        return await response.json();
+      }
+    }
+
+    // 使用示例
+    const client = new PoetoraClient('your-api-key');
+    const doc = await client.createDocument({
+      title: '新文档',
+      content: '这是文档内容'
+    });
+    ```
+
+  </Tab>
+  <Tab title="Python" icon="code">
+    ```python
+    # Poetora API 客户端 - Python 版本
+    import requests
+    import json
+
+    class PoetoraClient:
+        def __init__(self, api_key):
+            self.api_key = api_key
+            self.base_url = 'https://api.poetora.com/v1'
+            self.headers = {
+                'Authorization': f'Bearer {api_key}',
+                'Content-Type': 'application/json'
+            }
+
+        def create_document(self, data):
+            """创建新文档"""
+            response = requests.post(
+                f'{self.base_url}/documents',
+                headers=self.headers,
+                json=data
+            )
+            return response.json()
+
+        def get_document(self, doc_id):
+            """获取文档详情"""
+            response = requests.get(
+                f'{self.base_url}/documents/{doc_id}',
+                headers=self.headers
+            )
+            return response.json()
+
+    # 使用示例
+    client = PoetoraClient('your-api-key')
+    doc = client.create_document({
+        'title': '新文档',
+        'content': '这是文档内容'
+    })
+    print(f"文档ID: {doc['id']}")
+    ```
+
+  </Tab>
+  <Tab title="PHP" icon="code">
+    ```php
+    <?php
+    // Poetora API 客户端 - PHP 版本
+    class PoetoraClient {
+        private $apiKey;
+        private $baseURL;
+
+        public function __construct($apiKey) {
+            $this->apiKey = $apiKey;
+            $this->baseURL = 'https://api.poetora.com/v1';
+        }
+
+        public function createDocument($data) {
+            $curl = curl_init();
+
+            curl_setopt_array($curl, [
+                CURLOPT_URL => $this->baseURL . '/documents',
+                CURLOPT_RETURNTRANSFER => true,
+                CURLOPT_POST => true,
+                CURLOPT_POSTFIELDS => json_encode($data),
+                CURLOPT_HTTPHEADER => [
+                    'Authorization: Bearer ' . $this->apiKey,
+                    'Content-Type: application/json'
+                ]
+            ]);
+
+            $response = curl_exec($curl);
+            curl_close($curl);
+
+            return json_decode($response, true);
+        }
+
+        public function getDocument($id) {
+            $curl = curl_init();
+
+            curl_setopt_array($curl, [
+                CURLOPT_URL => $this->baseURL . '/documents/' . $id,
+                CURLOPT_RETURNTRANSFER => true,
+                CURLOPT_HTTPHEADER => [
+                    'Authorization: Bearer ' . $this->apiKey
+                ]
+            ]);
+
+            $response = curl_exec($curl);
+            curl_close($curl);
+
+            return json_decode($response, true);
+        }
+    }
+
+    // 使用示例
+    $client = new PoetoraClient('your-api-key');
+    $doc = $client->createDocument([
+        'title' => '新文档',
+        'content' => '这是文档内容'
+    ]);
+    echo "文档ID: " . $doc['id'];
+    ?>
+    ```
+
+  </Tab>
+</Tabs>
+
+### 安装和配置指南
+
+展示不同操作系统的安装方法：
+
+<Tabs>
+  <Tab title="Windows" icon="windows">
+    🪟 **Windows 系统配置**
+
+    在 Windows 上使用 Poetora CLI 工具：
+
+    **系统要求：**
+    - Windows 10 或更高版本
+    - Node.js 18.0 或更高版本
+    - PowerShell 5.1 或更高版本
+
+    **安装步骤：**
+
+    1. **安装 Node.js**
+       ```powershell
+       # 下载并安装 Node.js LTS 版本
+       winget install OpenJS.NodeJS
+       ```
+
+    2. **安装 Poetora CLI**
+       ```powershell
+       npm install -g @poetora/cli
+       ```
+
+    3. **验证安装**
+       ```powershell
+       poetora --version
+       ```
+
+    4. **登录账号**
+       ```powershell
+       poetora login
+       ```
+
+    <Tip>
+    建议使用 Windows Terminal 以获得更好的命令行体验。
+    </Tip>
+
+  </Tab>
+  <Tab title="macOS" icon="apple">
+    🍎 **macOS 系统配置**
+
+    在 macOS 上使用 Poetora CLI 工具：
+
+    **系统要求：**
+    - macOS 10.15 (Catalina) 或更高版本
+    - Node.js 18.0 或更高版本
+    - Terminal 或 iTerm2
+
+    **安装步骤：**
+
+    1. **安装 Homebrew（如果未安装）**
+       ```bash
+       /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+       ```
+
+    2. **安装 Node.js**
+       ```bash
+       brew install node
+       ```
+
+    3. **安装 Poetora CLI**
+       ```bash
+       npm install -g @poetora/cli
+       ```
+
+    4. **验证安装**
+       ```bash
+       poetora --version
+       ```
+
+    5. **登录账号**
+       ```bash
+       poetora login
+       ```
+
+    <Info>
+    macOS 用户可能需要在安装时使用 `sudo` 权限。
+    </Info>
+
+  </Tab>
+  <Tab title="Linux" icon="linux">
+    🐧 **Linux 系统配置**
+
+    在 Linux 发行版上使用 Poetora CLI 工具：
+
+    **支持的发行版：**
+    - Ubuntu 20.04+
+    - Debian 11+
+    - CentOS 8+
+    - Fedora 35+
+
+    **Ubuntu/Debian 安装：**
+
+    1. **更新包管理器**
+       ```bash
+       sudo apt update
+       ```
+
+    2. **安装 Node.js**
+       ```bash
+       curl -fsSL https://deb.nodesource.com/setup_lts.x | sudo -E bash -
+       sudo apt-get install -y nodejs
+       ```
+
+    3. **安装 Poetora CLI**
+       ```bash
+       sudo npm install -g @poetora/cli
+       ```
+
+    **CentOS/RHEL 安装：**
+
+    1. **安装 Node.js**
+       ```bash
+       curl -fsSL https://rpm.nodesource.com/setup_lts.x | sudo bash -
+       sudo yum install -y nodejs npm
+       ```
+
+    2. **安装 Poetora CLI**
+       ```bash
+       sudo npm install -g @poetora/cli
+       ```
+
+    **验证和登录：**
+    ```bash
+    poetora --version
+    poetora login
+    ```
+
+    <Warning>
+    某些 Linux 发行版可能需要额外的开发工具包。如遇问题请安装 `build-essential`。
+    </Warning>
+
+  </Tab>
+</Tabs>
+
+### 定价计划对比
+
+展示不同订阅计划的详细对比：
+
+<Tabs>
+  <Tab title="免费版" icon="gift">
+    🆓 **免费版 - 个人使用**
+
+    **价格：** 永久免费
+
+    **包含功能：**
+    - ✅ 5 个文档
+    - ✅ 基础组件库
+    - ✅ 1GB 存储空间
+    - ✅ 社区支持
+    - ✅ 基础主题
+    - ✅ 公开发布
+
+    **限制：**
+    - ❌ AI 功能不可用
+    - ❌ 不支持团队协作
+    - ❌ 无法使用自定义域名
+    - ❌ 仅支持基础导出格式
+
+    **适合：**
+    - 个人博客作者
+    - 学生用户
+    - 小型项目文档
+    - 试用和体验
+
+  </Tab>
+  <Tab title="专业版" icon="star">
+    ⭐ **专业版 - 个人和小团队**
+
+    **价格：** ¥68/月 或 ¥680/年（节省 2 个月）
+
+    **包含所有免费版功能，另外：**
+    - ✅ 无限文档
+    - ✅ 完整组件库
+    - ✅ 100GB 存储空间
+    - ✅ AI 写作助手
+    - ✅ 团队协作（最多 10 人）
+    - ✅ 优先客服支持
+    - ✅ 自定义主题
+    - ✅ 自定义域名
+    - ✅ 高级导出选项
+    - ✅ 数据分析
+
+    **适合：**
+    - 专业内容创作者
+    - 小型开发团队
+    - 技术博客
+    - 产品文档
+
+  </Tab>
+  <Tab title="企业版" icon="building">
+    🏢 **企业版 - 大型组织**
+
+    **价格：** 联系销售获取报价
+
+    **包含所有专业版功能，另外：**
+    - ✅ 无限团队成员
+    - ✅ 1TB+ 存储空间
+    - ✅ 单点登录 (SSO)
+    - ✅ 高级权限管理
+    - ✅ API 访问权限
+    - ✅ 专属客户经理
+    - ✅ SLA 服务保证
+    - ✅ 数据备份和恢复
+    - ✅ 私有部署选项
+    - ✅ 自定义集成开发
+
+    **适合：**
+    - 大型企业
+    - 政府机构
+    - 教育机构
+    - 有特殊安全要求的组织
+
+    <Card title="联系企业销售" icon="phone" cta="立即咨询">
+      我们的企业销售团队将为您提供个性化的解决方案和报价。
+    </Card>
+
+  </Tab>
+</Tabs>
+
+## 组件属性
+
+### Tabs 属性
+
+| 属性名        | 类型                         | 必需 | 默认值         | 描述                 |
+| ------------- | ---------------------------- | ---- | -------------- | -------------------- |
+| `defaultTab`  | `number`                     | ❌   | `0`            | 默认激活的标签页索引 |
+| `orientation` | `'horizontal' \| 'vertical'` | ❌   | `'horizontal'` | 标签页方向           |
+
+### Tab 属性
+
+| 属性名     | 类型      | 必需 | 默认值  | 描述             |
+| ---------- | --------- | ---- | ------- | ---------------- |
+| `title`    | `string`  | ✅   | -       | 标签页标题       |
+| `icon`     | `string`  | ❌   | -       | 标签页图标       |
+| `disabled` | `boolean` | ❌   | `false` | 是否禁用该标签页 |
+
+## 高级用法
+
+### 垂直标签页
+
+对于内容较多的场景，可以使用垂直布局：
+
+<Tabs orientation="vertical">
+  <Tab title="概述">
+    📊 **Poetora 数据分析功能概述**
+
+    获得深入的文档表现洞察：
+    - 实时访问统计
+    - 用户行为分析
+    - 内容热力图
+    - 转化率跟踪
+
+  </Tab>
+  <Tab title="实时数据">
+    📈 **实时数据监控**
+
+    当前文档状态：
+    - 在线访问者：24 人
+    - 今日访问量：156 次
+    - 平均停留时间：3分42秒
+    - 跳出率：18%
+
+  </Tab>
+  <Tab title="历史统计">
+    📋 **历史数据分析**
+
+    过去 30 天表现：
+    - 总访问量：4,521 次
+    - 独立访客：2,847 人
+    - 平均页面浏览量：2.3 页
+    - 用户满意度：4.7/5
+
+  </Tab>
+</Tabs>
+
+```mdx
+<Tabs orientation="vertical">
+  <Tab title="概述">
+    📊 **Poetora 数据分析功能概述**
+    获得深入的文档表现洞察...
+  </Tab>
+  <Tab title="实时数据">
+    📈 **实时数据监控** 当前文档状态...
+  </Tab>
+  <Tab title="历史统计">
+    📋 **历史数据分析** 过去 30 天表现...
+  </Tab>
+</Tabs>
+```
+
+### 嵌套标签页
+
+在需要更复杂信息层次时，可以嵌套使用标签页：
+
+<Tabs>
+  <Tab title="前端开发" icon="monitor">
+    💻 **前端技术栈**
+
+    <Tabs>
+      <Tab title="React">
+        ⚛️ **React 集成示例**
+
+        ```jsx
+        import { PoetoraEditor } from '@poetora/react';
+
+        function MyComponent() {
+          return (
+            <PoetoraEditor
+              apiKey="your-api-key"
+              documentId="doc-123"
+              onSave={(content) => {
+                console.log('Document saved:', content);
+              }}
+            />
+          );
+        }
+        ```
+      </Tab>
+      <Tab title="Vue">
+        🟢 **Vue 集成示例**
+
+        ```vue
+        <template>
+          <PoetoraEditor
+            :api-key="apiKey"
+            :document-id="documentId"
+            @save="handleSave"
+          />
+        </template>
+
+        <script>
+        import { PoetoraEditor } from '@poetora/vue';
+
+        export default {
+          components: {
+            PoetoraEditor
+          },
+          data() {
+            return {
+              apiKey: 'your-api-key',
+              documentId: 'doc-123'
+            };
+          },
+          methods: {
+            handleSave(content) {
+              console.log('Document saved:', content);
+            }
+          }
+        };
+        </script>
+        ```
+      </Tab>
+    </Tabs>
+
+  </Tab>
+  <Tab title="后端开发" icon="server">
+    🔧 **后端 API 集成**
+
+    <Tabs>
+      <Tab title="Node.js">
+        🟨 **Node.js SDK**
+
+        ```javascript
+        const { PoetoraSDK } = require('@poetora/node-sdk');
+
+        const poetora = new PoetoraSDK({
+          apiKey: process.env.POETORA_API_KEY
+        });
+
+        async function createDocument() {
+          const document = await poetora.documents.create({
+            title: '新文档',
+            content: '文档内容'
+          });
+
+          return document;
+        }
+        ```
+      </Tab>
+      <Tab title="Python">
+        🐍 **Python SDK**
+
+        ```python
+        from poetora_sdk import PoetoraClient
+
+        client = PoetoraClient(api_key=os.getenv('POETORA_API_KEY'))
+
+        def create_document():
+            document = client.documents.create(
+                title='新文档',
+                content='文档内容'
+            )
+            return document
+        ```
+      </Tab>
+    </Tabs>
+
+  </Tab>
+</Tabs>
+
+## 最佳实践
+
+### 标签组织
+
+- **逻辑分组** - 将相关内容组织在一起
+- **标题简洁** - 使用简短而描述性的标题
+- **数量适中** - 避免标签页过多影响用户体验
+- **顺序合理** - 按重要性或使用频率排序
+
+### 内容设计
+
+- **独立完整** - 每个标签页的内容应该相对独立
+- **长度均衡** - 避免某个标签页内容过长或过短
+- **视觉一致** - 保持各标签页的视觉风格一致
+- **交互友好** - 考虑移动设备的使用体验
+
+### 性能优化
+
+- **懒加载** - 对大量内容实施懒加载
+- **图片优化** - 压缩标签页中的图片
+- **代码分割** - 将复杂内容分割到不同标签页
+- **缓存策略** - 合理缓存标签页内容
+
+## 可访问性
+
+标签页组件支持完整的可访问性功能：
+
+- **键盘导航** - 支持 Tab、Arrow 键导航
+- **屏幕阅读器** - 提供适当的 ARIA 标签
+- **焦点管理** - 清晰的焦点指示
+- **状态提示** - 明确指示当前激活的标签页
+
+### 键盘操作
+
+| 按键              | 功能                      |
+| ----------------- | ------------------------- |
+| `Tab`             | 进入/离开标签页组件       |
+| `←` / `→`         | 在标签页之间切换          |
+| `Space` / `Enter` | 激活当前聚焦的标签页      |
+| `Home` / `End`    | 跳到第一个/最后一个标签页 |
+
+---
+
+标签页组件是组织复杂信息的强大工具。合理使用可以让用户快速找到所需内容，提升文档的使用体验。接下来可以学习[步骤指南组件](/components/basic/steps)来创建清晰的操作流程。

@@ -1,0 +1,148 @@
+---
+title: '媒体嵌入与图片'
+description: '添加图片、视频和交互式内容来丰富您的文档'
+icon: 'image'
+---
+
+为您的文档添加图片、嵌入视频和包含交互式内容，让文档更加生动有趣。
+
+您的文档仓库中的所有静态资源都会自动在相应路径上提供服务。例如，如果您在仓库中有 `/images/my-logo.png`，该图片将在 `https://docs.yoursite.com/images/my-logo.png` 可用。
+
+<Frame>
+  <img
+    className="rounded-xl"
+    src="https://mintlify-assets.b-cdn.net/bigbend.jpg"
+    alt="美丽的风景照片，前景是紫色花朵，背景是山脉，蓝天白云"
+  />
+</Frame>
+
+## 图片使用
+
+添加图片为您的文档提供视觉背景、示例或装饰效果。
+
+### 基础图片语法
+
+使用 [Markdown 语法](https://www.markdownguide.org/basic-syntax/#images) 向文档添加图片：
+
+```mdx
+![描述图片内容的替代文本](/path/to/image.png)
+```
+
+<Tip>始终包含描述性的替代文本以提高可访问性和 SEO 效果。替代文本应清楚描述图片显示的内容。</Tip>
+
+图片文件必须小于 20MB。对于更大的文件，请使用 CDN 服务如 [Amazon S3](https://aws.amazon.com/s3) 或 [Cloudinary](https://cloudinary.com) 进行托管。
+
+### HTML 图片嵌入
+
+为了更好地控制图片显示效果，使用 HTML `<img>` 标签：
+
+```html
+<img src="/images/dashboard.png" alt="主控制台界面" height="300" className="rounded-lg" />
+```
+
+#### 禁用缩放功能
+
+要禁用图片的默认点击缩放功能，添加 `noZoom` 属性：
+
+```html highlight="4"
+<img src="/images/screenshot.png" alt="描述性替代文本" noZoom height="200" />
+```
+
+#### 图片链接
+
+要使图片成为可点击链接，用锚点标签包装图片并添加 `noZoom` 属性：
+
+```html
+<a href="https://poetora.com" target="_blank">
+  <img src="/images/logo.png" alt="Poetora 标志" noZoom height="100" />
+</a>
+```
+
+<Note>锚点标签内的图片会自动显示指针光标以表明它们是可点击的。</Note>
+
+#### 明暗主题图片
+
+要为明暗主题显示不同的图片，使用 Tailwind CSS 类：
+
+```html
+<!-- 亮色主题图片 -->
+<img className="block dark:hidden" src="/images/light-mode.png" alt="亮色模式界面" />
+
+<!-- 暗色主题图片 -->
+<img className="hidden dark:block" src="/images/dark-mode.png" alt="暗色模式界面" />
+```
+
+## 视频内容
+
+Poetora 支持 [Markdown 中的 HTML 标签](https://www.markdownguide.org/basic-syntax/#html)，为您提供创建丰富内容的灵活性。
+
+<Tip>始终在视频元素内包含后备文本内容，以支持不支持视频播放的浏览器。</Tip>
+
+### YouTube 嵌入
+
+使用 iframe 元素嵌入 YouTube 视频：
+
+```html
+<iframe
+  className="w-full aspect-video rounded-xl"
+  src="https://www.youtube.com/embed/4KzFe50RQkQ"
+  title="YouTube 视频播放器"
+  frameborder="0"
+  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+  allowfullscreen
+></iframe>
+```
+
+<Frame>
+  <iframe
+    className="w-full aspect-video rounded-xl"
+    src="https://www.youtube.com/embed/4KzFe50RQkQ"
+    title="YouTube 视频播放器"
+    frameBorder="0"
+    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+    allowFullScreen
+  ></iframe>
+</Frame>
+
+### 自托管视频
+
+使用 HTML `<video>` 元素显示自托管的视频内容：
+
+```html
+<video controls className="w-full aspect-video rounded-xl" src="link-to-your-video.com"></video>
+```
+
+### 自动播放视频
+
+要自动播放视频，使用：
+
+```html
+<video
+  autoplay
+  muted
+  loop
+  playsinline
+  className="w-full aspect-video rounded-xl"
+  src="/videos/demo.mp4"
+></video>
+```
+
+<Note>使用 JSX 语法时，双词属性要使用驼峰命名：`autoPlay`、`playsInline`、`allowFullScreen`。</Note>
+
+## iframe 嵌入
+
+使用 iframe 元素嵌入外部内容：
+
+```html
+<iframe
+  src="https://example.com/embed"
+  title="嵌入内容"
+  className="w-full h-96 rounded-xl"
+></iframe>
+```
+
+## 相关资源
+
+<Card title="Frame 组件参考" icon="frame" horizontal href="/components/frames">
+  了解如何使用 Frame 组件来展示图片。
+</Card>
